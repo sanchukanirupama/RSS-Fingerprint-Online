@@ -7,6 +7,10 @@ app = Flask(__name__)
 
 model = joblib.load(r'clf_model')
 
+@app.route('/ok', methods=['GET'])
+def respond():
+    return "OKay"
+
 @app.route('/result', methods=['POST'])
 
 def predict():
