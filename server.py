@@ -8,11 +8,11 @@ app = Flask(__name__)
 
 model = joblib.load(r'clf_model')
 
-@app.route('/ok', methods=['GET'])
+@app.route('/', methods=['GET'])
 def respond():
-    return "OKay"
+    return "test route - health good!"
 
-@app.route('/result', methods=['POST'])
+@app.route('/predict-position', methods=['POST'])
 
 def predict():
     try:
